@@ -29,7 +29,7 @@ export class CardListComponent implements OnInit {
 
   getAllCard() {
     this.cardServiceService.findAllCard().subscribe(data => {
-      this.cards = data;
+      this.cards = data.sort((a, b) => a.id - b.id);
     });
   }
 
